@@ -1,6 +1,6 @@
 # Compléments de programmation - TD 1
 Nom, Prénom, No Etudiant, Nc
-     > Répondre ici
+     > MOHAMED ABDILLAHI, Abdillahi, 22306945, 55
 ## Remarques préliminaires
 * Pour l'ensemble des TDs, vous créerez un compte individuel sur [github](https://github.com/) si vous n'en possédez pas déjà un.
 Vous nommerez ce compte de la façon suivante: `uvsq<MonNuméroÉtudiant>`.
@@ -33,25 +33,27 @@ En terme de *commits*, quelle différence constatez-vous entre cocher une (ou pl
 Vérifiez que le projet compile et s'exécute dans l'IDE;
 Validez les changements (cf. [Enregistrer des modifications dans le dépôt](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Enregistrer-des-modifications-dans-le-d%C3%A9p%C3%B4t));
     ```bash
-    # Commandes pour valider les changements
+    git add Fraction.java Main.java
+    git commit -m"first commit"
     ```
 1. Ajoutez la méthode `toString` à la classe `Fraction` (cf. [`Object.toString`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html#toString())) qui retournera la chaîne `"Je suis une fraction."` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
-    // Code pour tester toString
+    Fraction f = new Fraction();
+    System.out.println(f);
     ```
 1. Publiez vos modifications sur le dépôt distant (cf. [Travailler avec des dépôts distants](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Travailler-avec-des-d%C3%A9p%C3%B4ts-distants));
 Vous utiliserez le protocole `https` pour cela;
 Vérifiez avec le navigateur;
     ```bash
-    # Commandes pour publier les modifications
+    git push -u origin main
     ```
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
     > Répondre ici
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
-    # Répondre ici
+    git pull
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (cf. [`.gitignore` pour Java](https://github.com/github/gitignore/blob/main/Java.gitignore));
     ```bash
