@@ -1,5 +1,7 @@
-package td1.SimpleFraction;
-
 public class Fraction {
+
+    public String toString(){
+        return "Je suis une fraction";
+    }
     
 }
