@@ -80,34 +80,57 @@ Vous respecterez les consignes ci-dessous :
 
 1. Ajoutez les attributs représentants le numérateur et le dénominateur (nombres entiers).
     ```Java
-    // Déclaration des attributs
+    private int numerateur;
+    private int denominateur;
     ```
 1. Ajoutez les constructeurs (cf. [Constructor Declarations](https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8)) suivants :
     * initialisation avec un numérateur et un dénominateur,
     * initialisation avec juste le numérateur (dénominateur égal à _1_),
     * initialisation sans argument (numérateur égal _0_ et dénominateur égal à _1_),
     ```Java
-    // Assertions pour tester les constructeurs (avec toString)
+    Fraction f1 = new Fraction(1,2);
+    // on teste que cette faction est égale à 1/2
+    assert f1.equals("1/2");
+    assert f1.resultat() == (double) 1/2;
+    Fraction f2 = new Fraction(3);
+    // on teste que cette faction est égale à 3
+    assert f2.equals("3/1");
+    assert f2.resultat() == 3; 
+    Fraction f3 = new Fraction();
+    // on teste que cette faction par defaut
+    assert f3.equals("0/1");
+    assert f3.resultat() == 0;
     ```
 1. Ajoutez les fractions constantes ZERO (0, 1) et UN (1, 1) (cf. [Constants in Java](https://www.baeldung.com/java-constants-good-practices)),
     ```Java
-    // Déclaration des constantes
+    public static Faction Zero = new Fraction();
+    public static Fraction Un= new Fraction(1);
     ```
 1. Ajoutez une méthode de consultation du numérateur et du dénominateur (par convention, en Java, une méthode retournant la valeur de l'attribut `anAttribute` est nommée `getAnAttribute`),
     ```Java
-    // Définition des getters
+    public int getNumerateur(){
+        return this.numerateur;
+    }
+
+    public int getDenominateur(){
+        return this.denominateur;
+    }
     ```
 1. Ajoutez une méthode de consultation de la valeur sous la forme d'un nombre en virgule flottante (méthode `doubleValue()`) (cf. [`java.lang.Number`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Number.html)),
    ```Java
-    // Assertions pour tester la conversion
+    assert f1.resultat() == (double) 1/2;
     ```
 1. Ajoutez une méthode permettant l'addition de deux fractions (la méthode `add` prend en paramètre *une* fraction et *retourne* la somme de la fraction courante et du paramètre),
    ```Java
-    // Assertions pour tester l'addition
+   Fraction f1 = new Fraction(1,2);
+   Fraction f2 = new Fraction(1,3);
+   assert f1.add(f2) == (double) 5/6;
     ```
 1. Ajoutez le test d'égalité entre fractions (deux fractions sont égales si elles représentent la même fraction réduite) (cf. [`java.lang.Object.equals`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object))),
    ```Java
-    // Assertions pour tester l'égalité
+    Fraction f1 = new Fraction(5,3);
+    Fraction f2 = new Fraction(5,3);
+    assert f1.equals(f2);
     ```
 1. Ajoutez la comparaison de fractions selon l'ordre naturel (cf. [`java.lang.Comparable`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Comparable.html)).
    ```Java
